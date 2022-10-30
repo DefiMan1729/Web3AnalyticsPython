@@ -7,6 +7,7 @@ import dotenv
 import os
 from dotenv import load_dotenv
 load_dotenv()
+import requests
 
 # Blockchain RPC URL
 blockchain_address = os.getenv("GANACHE_URL")
@@ -17,18 +18,24 @@ web3 = Web3(HTTPProvider(blockchain_address))
 web3.eth.defaultAccount = web3.eth.accounts[0]
 
 #If you are using Infura to connect to public testnet your intance will look something like this
-#web3_ropsten = Web3(Web3.HTTPProvider('https://ropsten.infura.io/v3/<API_KEY>'))
+#web3 = Web3(Web3.HTTPProvider(os.getenv("RPC_NODE_PROVIDER_URL")))
 
 #define the graph object
 G=nx.DiGraph()
 
 #I used the local contract JSON ABI path 
 #you can also paste the ABI directly. Copying the ABI is very easy if you are using Remix
-#contract_abi='<ABI>'
+#contract_abi='<ABI>' || if you have a verfied contract in Etherscan you can use that
 compiled_contract_path = os.getenv("ABI_JSON_PATH")
 with open(compiled_contract_path) as file:
     contract_json = json.load(file)  
     contract_abi = contract_json['abi']  
+
+# ***This is how you can fetch the ABI for a verfied contract from Etherscan***
+# response = requests.get(os.getenv("ETHERSCAN_URL"))
+# contract_json = json.loads(response.text)
+# contract_abi = contract_json['result']  
+
 
 
 #I deployed an Openzeppelin NFT (ERC721) contract locally 
@@ -54,6 +61,11 @@ _from=contract.events.Transfer().processReceipt(receipt)[0]['args']['from']
 print(_from)
 _tokenid=contract.events.Transfer().processReceipt(receipt)[0]['args']['tokenId']
 print(_tokenid)
+
+# ***Use the below format for your verified contarct in Testnet***
+# _from=contract.events.Transfer.getLogs(fromBlock=2182561)[0]['args']['from']
+# _to=contract.events.Transfer.getLogs(fromBlock=2182561)[0]['args']['to']
+# _tokenId=contract.events.Transfer.getLogs(fromBlock=2182561)[0]['args']['tokenId']
 
 #form the graph nodes using the variables
 G.add_node(_from)
