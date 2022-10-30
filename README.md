@@ -5,15 +5,18 @@ This repo is a introduction to Network Analysis using event data emitted from a 
 
 ```shell
 1. Import libraries
-2. Establish connection with blockchain RPC (in this case Ganache)
+2. Establish connection with blockchain RPC (in this case: Ganache)
 3. Create Graph object
 4. Add graph nodes and edges by from Transfer event trigged by Solidity contract 
 5. Plot graph
 6. Generate additional statistics
 ```
 
+sample graph generated using the Networkx
+
 ![image](https://user-images.githubusercontent.com/115624087/198863254-4928d5ca-5829-426b-8912-de90df521651.png)
-![image](https://user-images.githubusercontent.com/115624087/198863296-88596fc1-f1ef-494b-a71f-bda52ea5b1ac.png)
+![image](https://user-images.githubusercontent.com/115624087/198870286-7aea8b7e-cba9-432b-a3f3-25fafe1a349c.png)
+
 
 
 
@@ -29,4 +32,4 @@ Closeness Centrality: it scores each node based on their ‘closeness’ to all 
 
 Eigen Centrality: it takes into account how well connected a node is, and how many links their connections have, and so on through the network. It can identify the account that has influence over the entire network.
 
-These measures can be used to mark suspicious accounts.
+These measures can be used to identify suspicious accounts.
