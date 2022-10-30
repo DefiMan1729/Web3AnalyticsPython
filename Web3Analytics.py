@@ -152,3 +152,6 @@ G.add_edge(_from,_to)
 pos = nx.circular_layout(G)    
 nx.draw(G, pos, with_labels = True, edge_color = 'b', arrowsize=9, arrowstyle='fancy')   
 plt.show()
+
+# Degree Centrality scores the number of connections/links held by each node of the network. It is useful to find the most influential or connected account.
+print(nx.degree_centrality(G))
