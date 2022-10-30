@@ -17,9 +17,6 @@ This repo is a introduction to Network Analysis using event data emitted from a 
 
 
 
-
-
-
 **Centrality Analysis**
 
 Centrality measures are a vital tool for understanding the structural dynamics of nodes in a network.
