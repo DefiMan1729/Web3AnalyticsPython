@@ -3,11 +3,18 @@
 Public blockchain networks allow us to access radical new datasets that can reveal patterns in the movement of Assets, Cryptos or NFTs, which in turn can be leveraged for monitoring transactions and potentially aiding AML/CFT initiatives.
 This repo is a introduction to Network Analysis using event data emitted from a blockchain transaction. Such analysis can enable fraud investigators to uncover and prevent increasingly sophisticated fraud schemes with more ease and confidence.
 
+>*In Solidity, events are dispatched signals the smart contracts can fire. Dapps, or anything connected to Ethereum JSON-RPC API, can listen to these events and act accordingly. An event can also be indexed so that the event history is searchable later. https://ethereum.org/en/developers/tutorials/logging-events-smart-contracts/*
+
+In this example I have leveraged the default "Transfer" event that gets emitted from an Openzepelin ERC721 contract.
+When a NFT is transferred from one account to another, I capure the "from" and "to" attributes of the transfer event to draw a directed graph connecting the "from" and the "to" nodes. 
+
+
 ```shell
-1. Import libraries
+Code Structure
+1. Import libraries (web3, JSON etc)
 2. Establish connection with blockchain RPC (in this case: Ganache)
 3. Create Graph object
-4. Add graph nodes and edges by from Transfer event trigged by Solidity contract 
+4. Add graph nodes and edges from the parameters of the "Transfer" event trigged by Solidity contract 
 5. Plot graph
 6. Generate additional statistics
 ```
