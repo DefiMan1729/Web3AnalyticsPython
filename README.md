@@ -19,7 +19,7 @@ Code Structure
 6. Generate additional statistics
 ```
 
-sample graph generated using the Networkx
+Sample graph generated using python's Networkx package
 
 ![image](https://user-images.githubusercontent.com/115624087/198863254-4928d5ca-5829-426b-8912-de90df521651.png)
 ![image](https://user-images.githubusercontent.com/115624087/198870286-7aea8b7e-cba9-432b-a3f3-25fafe1a349c.png)
@@ -29,7 +29,7 @@ sample graph generated using the Networkx
 
 **Centrality Analysis**
 
-Centrality measures are a vital tool for understanding the structural dynamics of nodes in a network.
+*Centrality measures are a vital tool for understanding the structural dynamics of nodes in a network.*
 
 Degree Centrality: it scores the number of connections/links held by each node of the network. It is useful to find the most influential or connected account.
 
