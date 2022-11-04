@@ -6,6 +6,9 @@ This repo is a introduction to Network Analysis using event data emitted from a 
 >*In Solidity, events are dispatched signals the smart contracts can fire. Dapps, or anything connected to Ethereum JSON-RPC API, can listen to these events and act accordingly. An event can also be indexed so that the event history is searchable later. https://ethereum.org/en/developers/tutorials/logging-events-smart-contracts/*
 
 In this example I have leveraged the default "Transfer" event that gets emitted from an Openzepelin ERC721 contract.
+```shell
+emit Transfer(from, to, tokenId);
+```
 When a NFT is transferred from one account to another, I capure the "from" and "to" attributes of the transfer event to draw a directed graph connecting the "from" and the "to" nodes. 
 
 
