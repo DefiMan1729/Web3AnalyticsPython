@@ -11,6 +11,9 @@ emit Transfer(from, to, tokenId);
 ```
 When a NFT is transferred from one account to another, I capure the "from" and "to" attributes of the transfer event to draw a directed graph connecting the "from" and the "to" nodes. 
 
+<img width="658" alt="image" src="https://user-images.githubusercontent.com/115624087/203530572-b78f9ee2-b31f-47ba-b8b7-907cf46656b8.png">
+
+
 
 ```shell
 Code Structure
